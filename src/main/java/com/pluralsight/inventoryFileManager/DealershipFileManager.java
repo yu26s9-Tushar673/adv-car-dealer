@@ -1,4 +1,4 @@
-package com.pluralsight.filemanager;
+package com.pluralsight.inventoryFileManager;
 
 import com.pluralsight.models.Dealership;
 import com.pluralsight.models.Vehicle;
@@ -8,10 +8,12 @@ import java.io.*;
 public class DealershipFileManager {
     private String fileName;
 
+    // Constructor
     public DealershipFileManager(String fileName) {
         this.fileName = fileName;
     }
 
+    // Return Current Dealership Inventory
     public Dealership getDealership() {
         Dealership dealership = null;
 
@@ -45,6 +47,7 @@ public class DealershipFileManager {
         return  dealership;
     }
 
+    // Update Dealership Inventory
     public void saveDealership(Dealership dealership) {
         try {
             BufferedWriter writer = new BufferedWriter(new FileWriter(fileName));

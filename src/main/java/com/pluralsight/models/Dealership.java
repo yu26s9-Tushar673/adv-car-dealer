@@ -9,6 +9,7 @@ public class Dealership {
     private String phone;
     private ArrayList<Vehicle> inventory;
 
+    // Constructor
     public Dealership(String name, String address, String phone) {
         this.name = name;
         this.address = address;
@@ -16,6 +17,7 @@ public class Dealership {
         this.inventory = new ArrayList<>();
     }
 
+    // Returns a List of Vehicles in inventory filtered by given price range
     public List<Vehicle> getVehiclesByPrice(double min, double max) {
         List<Vehicle> result = new ArrayList<>();
         for (Vehicle v : inventory) {
@@ -26,6 +28,7 @@ public class Dealership {
         return result;
     }
 
+    // Returns a List of Vehicles in inventory filtered by given Make, Model
     public List<Vehicle> getVehiclesByMakeModel(String make, String model) {
         List<Vehicle> result = new ArrayList<>();
         for (Vehicle v : inventory) {
@@ -36,6 +39,7 @@ public class Dealership {
         return result;
     }
 
+    // Returns a List of Vehicles in inventory filtered by given year range
     public List<Vehicle> getVehiclesByYear(int min, int max) {
         List<Vehicle> result = new ArrayList<>();
         for (Vehicle v : inventory) {
@@ -46,6 +50,7 @@ public class Dealership {
         return result;
     }
 
+    // Returns a List of Vehicles in inventory filtered by given color
     public List<Vehicle> getVehiclesByColor(String color) {
         List<Vehicle> result = new ArrayList<>();
         for (Vehicle v : inventory) {
@@ -56,6 +61,7 @@ public class Dealership {
         return result;
     }
 
+    // Returns a List of Vehicles in inventory filtered by mileage range
     public List<Vehicle> getVehiclesByMileage(int min, int max) {
         List<Vehicle> result = new ArrayList<>();
         for (Vehicle v : inventory) {
@@ -66,6 +72,7 @@ public class Dealership {
         return result;
     }
 
+    // Returns a List of Vehicles in inventory filtered by Vehicle Type
     public List<Vehicle> getVehiclesByType(String vehicleType) {
         List<Vehicle> result = new ArrayList<>();
         for (Vehicle v : inventory) {
@@ -76,12 +83,12 @@ public class Dealership {
         return result;
     }
 
+    // Inventory Modifiers
     public List<Vehicle> getAllVehicles() {   return inventory;   }
-
     public void addVehicle(Vehicle vehicle) {   inventory.add(vehicle);   }
-
     public void removeVehicle(Vehicle vehicle) {   inventory.remove(vehicle);   }
 
+    // Getters and Setters
     public void setName(String name) {   this.name = name;   }
     public void setAddress(String address) {   this.address = address;   }
     public void setPhone(String phone) {   this.phone = phone;   }

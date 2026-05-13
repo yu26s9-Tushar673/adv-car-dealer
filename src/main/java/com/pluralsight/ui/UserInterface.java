@@ -1,6 +1,6 @@
 package com.pluralsight.ui;
 
-import com.pluralsight.filemanager.DealershipFileManager;
+import com.pluralsight.inventoryFileManager.DealershipFileManager;
 import com.pluralsight.models.Dealership;
 import com.pluralsight.models.Vehicle;
 
@@ -14,6 +14,7 @@ public class UserInterface {
         this.dealership = fileManager.getDealership();
     }
 
+    // Dealership Menu
     public void display() {
         init();
         while (true) {
@@ -52,6 +53,7 @@ public class UserInterface {
         }
     }
 
+    // Displays all Vehicles in inventory
     private void displayVehicles(List<Vehicle> vehicles) {
         if (vehicles.isEmpty()){
             System.out.println("No vehicles found.");
@@ -64,45 +66,53 @@ public class UserInterface {
         }
     }
 
+    // Displays inventory filtered by price range
     private void processGetByPriceRequest() {
         double min = Console.promptForDouble("Enter Minimum Price: ");
         double max = Console.promptForDouble("Enter Maximum Price: ");
         displayVehicles(dealership.getVehiclesByPrice(min, max));
     }
 
+    // Displays inventory filtered by Make/model
     private void processGetByMakeModelRequest() {
         String make = Console.promptForString("Enter Vehicle Make: ");
         String model = Console.promptForString("Enter Vehicle Model: ");
         displayVehicles(dealership.getVehiclesByMakeModel(make, model));
     }
 
+    // Displays inventory filtered by year range
     private void processGetByYearRequest() {
         int min = Console.promptForInt("Enter Minimum Year: ");
         int max = Console.promptForInt("Enter Maximum Year: ");
         displayVehicles(dealership.getVehiclesByYear(min, max));
     }
 
+    // Displays inventory filtered by color
     private void processGetByColorRequest() {
         String color = Console.promptForString("Enter Color: ");
         displayVehicles(dealership.getVehiclesByColor(color));
     }
 
+    // Displays inventory filtered by mileage range
     private void processGetByMileageRequest() {
         int min = Console.promptForInt("Enter Minimum Mileage: ");
         int max = Console.promptForInt("Enter Maximum Mileage: ");
         displayVehicles(dealership.getVehiclesByMileage(min, max));
     }
 
+    // Displays inventory filtered by Vehicle Type
     private void processGetByVehicleTypeRequest() {
         String type = Console.promptForString("Enter Type Of Vehicle (car, truck, suv, etc): ");
         displayVehicles(dealership.getVehiclesByType(type));
     }
 
+    // Displays all Vehicles by retrieving inventory List and calling displayVehicles method
     private void processGetAllVehiclesRequest() {
         List<Vehicle> vehicles = dealership.getAllVehicles();
         displayVehicles(vehicles);
     }
 
+    // Adds a Vehicle to Dealership inventory
     private void processAddVehicleRequest() {
         int vin = Console.promptForInt("Enter Vehicle VIN#: ");
         int year = Console.promptForInt("Enter Vehicle Year: ");
@@ -118,6 +128,7 @@ public class UserInterface {
         System.out.println("Vehicle Added to Inventory.");
     }
 
+    // Removes a Vehicle from Dealership inventory
     private void processRemoveVehicleRequest() {
         int vin = Console.promptForInt("Enter Vehicle VIN # to remove: ");
         for (Vehicle v : dealership.getAllVehicles()) {
@@ -135,5 +146,4 @@ public class UserInterface {
         }
         System.out.println("Vehicle with VIN #" + vin + " not found.");
     }
-
 }

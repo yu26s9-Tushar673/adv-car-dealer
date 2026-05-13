@@ -54,7 +54,6 @@ public class Console
     public static double promptForDouble(String prompt) {
 
         System.out.print(prompt);
-
         double result;
 
         while(true){
@@ -70,7 +69,6 @@ public class Console
         }
     }
 
-
     /**
      * Prompts the user for an integer.
      * @param prompt to display the user
@@ -79,7 +77,6 @@ public class Console
     public static int promptForInt(String prompt) {
 
         System.out.print(prompt);
-
         int result;
 
         while(true){
@@ -103,7 +100,6 @@ public class Console
     public static float promptForFloat(String prompt) {
 
         System.out.print(prompt);
-
         float result;
 
         while(true){
@@ -151,7 +147,6 @@ public class Console
     public static int promptForInt(String prompt, int min, int max) {
 
         System.out.print(prompt);
-
         int result;
 
         while(true){
