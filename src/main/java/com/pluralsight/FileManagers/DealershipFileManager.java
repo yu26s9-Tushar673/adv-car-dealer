@@ -1,4 +1,4 @@
-package com.pluralsight.inventoryFileManager;
+package com.pluralsight.FileManagers;
 
 import com.pluralsight.models.Dealership;
 import com.pluralsight.models.Vehicle;

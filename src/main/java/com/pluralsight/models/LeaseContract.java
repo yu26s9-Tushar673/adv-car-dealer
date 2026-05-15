@@ -10,8 +10,8 @@ public class LeaseContract extends Contract{
         super(date, customerName, customerEmail, vehicle);
     }
 
-    public double getExpectedEndingValue() { return getVehicleSold().getPrice() * endingValueRate;   }
-    public double getLeaseFee() {   return getVehicleSold().getPrice() * leaseFeeRate;   }
+    public static double getExpectedEndingValue() { return getVehicleSold().getPrice() * endingValueRate;   }
+    public static double getLeaseFee() {   return getVehicleSold().getPrice() * leaseFeeRate;   }
 
 
     @Override
